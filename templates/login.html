@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container">
+        <div class="glass-card">
+            <span class="eyebrow">YOU’RE INVITED</span><div class="login-heart" aria-hidden="true">♡</div><h1>A little more love.</h1>
+            <p class="subtitle">Your little corner of kindness, connections, and KIS.</p>
+
+            {% if error %}
+                <div class="error-msg">{{ error }}</div>
+            {% endif %}
+
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="input-group">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Michael" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="grade">Grade</label>
+                    <input type="text" id="grade" name="grade" placeholder="e.g. 9" required autocomplete="off">
+                </div>
+                <button type="submit" class="btn-primary">Step inside ↗</button>
+            </form>
+            <div class="demo-hint">
+                <small>Demo accounts: Michael (G9), Emma (G9), Jamie (G10), Sam (G8), Taylor (G11)</small>
+            </div>
+        </div>
+    </div>
+{% endblock %}

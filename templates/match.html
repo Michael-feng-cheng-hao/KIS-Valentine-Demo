@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container">
+        <div class="glass-card">
+            <h1>Your Secret Match 🕵️‍♂️💕</h1>
+            <p class="subtitle">One clue. One secret connection. Ready for the big reveal?</p>
+
+            <div class="match-box">
+                <div class="match-icon">🔍</div>
+                <div class="mystery-orb" aria-hidden="true">?</div><button id="revealMatch" class="btn-primary">Reveal my demo match ✧</button><p id="revealStatus" role="status"></p><h2 id="matchIdentity" hidden>Your match: <span class="highlight-name">{{ match_name }}</span></h2><p class="demo-hint">A fictional match, just for fun.</p>
+                <div class="clue-card">
+                    <p><strong>Campus Clue:</strong></p>
+                    <p class="clue-text">"{{ clue }}"</p>
+                </div>
+            </div>
+
+            <div id="matchNext" hidden class="action-footer" style="margin-top:20px;">
+                <a href="{{ url_for('send') }}" class="btn-primary-link"><span class="btn-primary">Send Them a Note ✉️</span></a>
+            </div>
+
+            <div class="logout-link" style="margin-top:15px;">
+                <a href="{{ url_for('home') }}">Back to Home 🏠</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

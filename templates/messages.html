@@ -1,0 +1,35 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container">
+        <div class="glass-card">
+            <h1>Valentine Bulletin & Messages 📥</h1>
+
+            <div class="filters" aria-label="Filter notes"><button class="btn-secondary" data-filter="all" aria-pressed="true">All notes</button><button class="btn-secondary" data-filter="private" aria-pressed="false">Private</button><button class="btn-secondary" data-filter="public" aria-pressed="false">Public board</button></div><p id="emptyFilter" hidden>No notes in this view yet.</p><div class="message-list">
+                {% if messages %}
+                    {% for msg in messages %}
+                        <div class="message-item {% if msg.private %}private-msg{% else %}public-msg{% endif %}">
+                            <div class="message-header">
+                                <span class="message-sender">From: <strong>{{ msg.sender }}</strong></span>
+                                <span class="badge">{% if msg.private %}🔒 Private{% else %}📢 Public{% endif %}</span>
+                            </div>
+                            <div class="message-text">"{{ msg.text }}"</div>
+                            {% if msg.private %}
+                                <small class="message-recipient">To: {{ msg.recipient }}</small>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="no-messages">No messages yet!</p>
+                {% endif %}
+            </div>
+
+            <div class="action-footer" style="margin-top:20px;">
+                <a href="{{ url_for('send') }}" class="btn-primary-link"><span class="btn-primary">Send Another Note ✉️</span></a>
+            </div>
+
+            <div class="logout-link" style="margin-top:15px;">
+                <a href="{{ url_for('match') }}">Secret Match 🔍</a> | 
+                <a href="{{ url_for('home') }}">Back to Home 🏠</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

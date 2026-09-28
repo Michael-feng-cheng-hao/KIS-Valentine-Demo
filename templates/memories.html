@@ -1,0 +1,68 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container memories-container">
+        <div class="glass-card main-memories-card">
+            <h1>Our Story 💕</h1>
+            <p class="subtitle">Collect all four memories. Every little moment counts.</p>
+
+            <div class="memory-progress"><span id="memoryCount" role="status">0 / 4 memories discovered</span><progress id="memoryProgress" max="4" value="0" aria-label="Memories discovered"></progress></div><div class="memory-grid">
+                <!-- Card 1 -->
+                <div class="memory-card">
+                    <div class="memory-card-inner">
+                        <div class="memory-card-front">
+                            <span class="card-icon">🌱</span>
+                            <h3>The Beginning</h3>
+                        </div>
+                        <div class="memory-card-back">
+                            <p>From the first hello at school, everything became a little brighter!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="memory-card">
+                    <div class="memory-card-inner">
+                        <div class="memory-card-front">
+                            <span class="card-icon">✨</span>
+                            <h3>Best Memories</h3>
+                        </div>
+                        <div class="memory-card-back">
+                            <p>Laughing together during lunch, studying in the library, and all the quiet moments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="memory-card">
+                    <div class="memory-card-inner">
+                        <div class="memory-card-front">
+                            <span class="card-icon">😂</span>
+                            <h3>Funny Moments</h3>
+                        </div>
+                        <div class="memory-card-back">
+                            <p>Remember that time we couldn't stop laughing during class presentation preparation?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="memory-card">
+                    <div class="memory-card-inner">
+                        <div class="memory-card-front">
+                            <span class="card-icon">🚀</span>
+                            <h3>Future Adventures</h3>
+                        </div>
+                        <div class="memory-card-back">
+                            <p>Looking forward to making many more amazing school memories together!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-footer">
+                <a href="{{ url_for('letter') }}" class="btn-primary-link"><span class="btn-primary">Open Valentine Letter 💌</span></a>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}

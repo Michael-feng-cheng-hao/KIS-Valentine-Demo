@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container">
+        <div class="glass-card question-card">
+            <div class="heart-badge">💖</div>
+            <h1>Will you be my Valentine? 💕</h1>
+            <p class="subtitle">Your Valentine adventure is ready. “Later” might have other plans…</p>
+
+            <p id="journeyStatus" class="journey-status" role="status" data-destination="{{ url_for('game') }}"></p>
+            <div class="button-group">
+                <button id="yesBtn" class="btn-primary">YES! 💖</button>
+                <button id="noBtn" class="btn-secondary">Maybe later</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay hidden">
+        <div class="glass-card modal-card">
+            <h2>You said yes! 💖</h2>
+            <p class="modal-subtitle">✨ Valentine Mission Unlocked ✨</p>
+            <div class="gift-icon">🎁</div>
+            <a href="{{ url_for('game') }}" class="btn-primary-link"><span class="btn-primary">Open Your Surprise 🚀</span></a>
+        </div>
+    </div>
+
+    
+{% endblock %}

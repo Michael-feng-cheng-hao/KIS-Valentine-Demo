@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container letter-container">
+        <div class="glass-card letter-wrapper">
+            <h1>You've Got Mail! 💌</h1>
+            <p class="subtitle">Click the envelope to open your Valentine note.</p>
+
+            <div class="envelope-wrapper" id="envelopeWrapper">
+                <div class="envelope">
+                    <div class="front flap"></div>
+                    <div class="front pocket"></div>
+                    <div class="letter">
+                        <div class="letter-content">
+                            <h2>Happy Valentine's Day! 💕</h2>
+                            <p>Thank you for bringing so much positivity, smiles, and great memories to school every day!</p>
+                            <p class="signature">With love, Michael &amp; the Media Team</p>
+                        </div>
+                    </div>
+                    <div class="heart-seal">💖</div>
+                </div>
+            </div>
+
+            <section class="fortune-box"><span class="eyebrow">ONE MORE LITTLE SURPRISE</span><h2>Your Valentine fortune</h2><button id="fortuneBtn" class="btn-secondary">Crack open a fortune ✦</button><p id="fortuneText" role="status">A little good energy, just for you.</p></section><div class="action-footer" style="margin-top: 30px;">
+                <a href="{{ url_for('match') }}" class="btn-primary-link"><span class="btn-primary">Reveal your secret connection ✧</span></a>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}

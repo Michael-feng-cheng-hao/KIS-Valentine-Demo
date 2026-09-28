@@ -1,0 +1,31 @@
+{% extends 'base.html' %}{% block content %}
+    <div class="card-container game-container">
+        <div class="glass-card game-card">
+            <h1>Catch the Hearts ❤️</h1>
+            <p class="subtitle">Click 10 floating hearts to unlock your surprise!</p>
+            
+            <div class="score-board">
+                <span>Hearts Caught: </span>
+                <strong id="scoreCount">0</strong> / 10
+            </div>
+
+            <p id="comboText" class="combo-text" role="status">Make your first catch. Start a little magic.</p><div id="gameArena" class="game-arena">
+                <div id="gameStartOverlay" class="arena-overlay">
+                    <button id="startGameBtn" class="btn-primary">Start Game 🎮</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Complete Modal -->
+    <div id="gameCompleteModal" class="modal-overlay hidden">
+        <div class="glass-card modal-card">
+            <h2>Mission Complete! 🎉</h2>
+            <p class="modal-subtitle">You caught all 10 hearts!</p>
+            <div class="gift-icon">🏆</div>
+            <a href="{{ url_for('memories') }}" class="btn-primary-link"><span class="btn-primary">See Our Story 💕</span></a>
+        </div>
+    </div>
+
+    
+{% endblock %}
